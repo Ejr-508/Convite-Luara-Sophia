@@ -3,17 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Convite Real - Princesinha Sofia</title>
-
-    <!-- TAGS ESPECIAIS PARA MOSTRAR A IMAGEM E NOME NO WHATSAPP -->
-    <meta property="og:title" content="Convite Real - Luara Sophia">
-    <meta property="og:description" content="Luara Sophia - 1 Ano. Você foi convidado para o nosso Baile Real!">
-    <meta property="og:image" content="https://ejr-508.github.io/Convite-digital/thumb.png">
-    <meta property="og:image:type" content="image/png">
-    <meta property="og:image:width" content="300">
-    <meta property="og:image:height" content="300">
-    <meta property="og:type" content="website">
-
+    <title>Convite Real - Luara Shopia</title>
     <!-- Fontes mágicas e delicadas do Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;600;700&family=Sofia&display=swap" rel="stylesheet">
     
@@ -25,6 +15,7 @@
         }
 
         body {
+            /* Fundo em degradê lilás pastel bem delicado */
             background: linear-gradient(135deg, #f3e8ff 0%, #e9d5ff 100%);
             color: #3b0764;
             display: flex;
@@ -36,6 +27,7 @@
         }
 
         .invite-container {
+            /* Fundo do convite em Roxo Real com bordas douradas */
             background: linear-gradient(135deg, #6b21a8 0%, #4c1d95 100%);
             color: #fdf4ff;
             max-width: 450px;
@@ -44,33 +36,35 @@
             padding: 45px 30px;
             text-align: center;
             box-shadow: 0 20px 40px rgba(107, 33, 168, 0.3);
-            border: 3px solid #f59e0b;
+            border: 3px solid #f59e0b; /* Borda Dourada */
             position: relative;
         }
 
-        /* IMAGEM DE FUNDO DO CONVITE (Também ajustada para o seu GitHub) */
+        /* CAMADA DA IMAGEM DE FUNDO SEMI-TRANSPARENTE DA PRINCESINHA SOFIA */
         .invite-container::after {
             content: "";
-            background-image: url('https://ejr-508.github.io/Convite-digital/thumb.png');
-            background-size: 85%;
+            background-image: url('https://www.imagenspng.com.br/wp-content/uploads/2018/11/princesa-sofia-05.png');
+            background-size: 85%; /* Controla o tamanho da imagem no fundo */
             background-repeat: no-repeat;
-            background-position: center 30%;
-            opacity: 0.12;
+            background-position: center 30%; /* Centralizada horizontalmente */
+            opacity: 0.12; /* Controle da transparência (0.12 = 12% de opacidade) */
             position: absolute;
             top: 0;
             left: 0;
             right: 0;
             bottom: 0;
             z-index: 0;
-            pointer-events: none;
-            border-radius: 27px;
+            pointer-events: none; /* Não atrapalha os cliques nos botões */
+            border-radius: 27px; /* Acompanha o arredondado do convite */
         }
 
+        /* Mantém os elementos visíveis acima da imagem de fundo */
         .badge, h1, .subtitle, .info-block, .rsvp-section {
             position: relative;
             z-index: 1;
         }
 
+        /* Detalhe que lembra uma coroa/realeza no topo */
         .invite-container::before {
             content: "👑";
             font-size: 2rem;
@@ -84,7 +78,7 @@
         }
 
         .badge {
-            background: #fef08a;
+            background: #fef08a; /* Amarelo ouro claro */
             color: #713f12;
             padding: 6px 18px;
             border-radius: 20px;
@@ -98,10 +92,12 @@
         }
 
         h1 {
+            /* AJUSTADO: Nome correto da fonte carregada do Google (Sofia) */
             font-family: 'Sofia', cursive;
             font-size: 3.2rem;
             line-height: 1.2;
             margin-bottom: 15px;
+            /* Degradê dourado brilhante no texto */
             background: linear-gradient(to right, #ffe4e6, #fef08a, #f59e0b);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
@@ -121,11 +117,11 @@
             border-radius: 20px;
             padding: 20px;
             margin-bottom: 20px;
-            backdrop-filter: blur(2px);
+            backdrop-filter: blur(2px); /* Efeito enevoado para melhorar a leitura sobre a imagem */
         }
 
         .info-title {
-            color: #fef08a;
+            color: #fef08a; /* Dourado para os títulos secundários */
             font-size: 0.9rem;
             text-transform: uppercase;
             font-weight: 700;
@@ -141,7 +137,7 @@
 
         .btn {
             display: block;
-            background: linear-gradient(to right, #f59e0b, #d97706);
+            background: linear-gradient(to right, #f59e0b, #d97706); /* Botão Dourado Realeza */
             color: #3b0764;
             text-decoration: none;
             padding: 16px;
@@ -188,7 +184,8 @@
     <div class="invite-container">
         <span class="badge">Convite Real</span>
         
-        <h1>Luara Sophia - 1 Ano</h1>
+        <!-- Suas informações salvas com sucesso -->
+        <h1>Luara Shopia - 1 Ano</h1>
         <p class="subtitle">Sua presença tornará o nosso reino ainda mais alegre e mágico!</p>
 
         <div class="info-block">
@@ -201,9 +198,10 @@
             <div class="info-value">Sede dos Idosos</div>
             <p style="color: #cbd5e1; font-size: 0.9rem; margin-top: 5px;">R. da Vaidade, 120, Salinas da Margarida</p>
             
-            <a href="https://maps.app.goo.gl/mhdQMF5HsWT88YFy7" target="_blank" class="btn">Abrir Mapa Real</a>
+            <a href="https://maps.app.goo.gl/" target="_blank" class="btn">Abrir Mapa Real</a>
         </div>
 
+        <!-- Seção de Confirmação (RSVP) ajustada para exibição ideal -->
         <div class="rsvp-section">
             <h3>Confirme sua Presença</h3>
             
