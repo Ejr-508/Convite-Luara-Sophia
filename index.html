@@ -8,8 +8,6 @@
     <!-- TAGS ESPECIAIS PARA MOSTRAR A IMAGEM E NOME NO WHATSAPP -->
     <meta property="og:title" content="Luara Sophia - Convite Real">
     <meta property="og:description" content="Você foi convidado para o nosso Baile Real!">
-    
-    <!-- AQUI ESTAVA O ERRO: AGORA APONTA DIRETO PARA O SEU GITHUB -->
     <meta property="og:image" content="https://ejr-508.github.io/Convite-Luara-Sophia/princesa_02.png">
     <meta property="og:image:secure_url" content="https://ejr-508.github.io/Convite-Luara-Sophia/princesa_02.png">
     <meta property="og:image:type" content="image/png">
@@ -53,41 +51,68 @@
             position: relative;
         }
 
-        /* CAMADA DA IMAGEM DE FUNDO SEMI-TRANSPARENTE DA PRINCESINHA SOFIA */
-        .invite-container::after {
+       /* MEDALHA REAL DA COROA (BLINDADA) */
+.crown {
+    font-size: 1.8rem;
+    position: absolute !important; /* O !important obriga ela a flutuar */
+    top: -30px !important; /* Obriga ela a subir para a borda */
+    left: 50%;
+    transform: translateX(-50%);
+    
+    width: 60px;
+    height: 60px;
+    background: #f3e8ff; 
+    border: 3px solid #f59e0b; 
+    border-radius: 50%; 
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+    z-index: 10 !important;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+}
+
+        /* CAMADA 1: IMAGEM DE FUNDO TOTAL (Fica por baixo) */
+        .invite-container::before {
             content: "";
-            background-image: url('https://ejr-508.github.io/Convite-Luara-Sophia/princesa-sofia.png');
-            background-size: 85%; /* Controla o tamanho da imagem no fundo */
+            background-image: url('https://ejr-508.github.io/Convite-Luara-Sophia/fundo.jpg');
+            background-size: cover;
             background-repeat: no-repeat;
-            background-position: center 25%; /* Centralizada horizontalmente */
-            opacity: 0.42; /* Controle da transparência (0.12 = 12% de opacidade) */
+            background-position: center;
+            opacity: 0.15; /* Transparência do fundo total (15%) */
             position: absolute;
             top: 0;
             left: 0;
             right: 0;
             bottom: 0;
             z-index: 0;
-            pointer-events: none; /* Não atrapalha os cliques nos botões */
-            border-radius: 27px; /* Acompanha o arredondado do convite */
+            pointer-events: none;
+            border-radius: 27px;
         }
 
-        /* Mantém os elementos visíveis acima da imagem de fundo */
-        .badge, h1, .subtitle, .info-block, .rsvp-section {
+        /* CAMADA 2: PRINCESINHA SOFIA CENTRADA (Fica por cima do fundo) */
+        .invite-container::after {
+            content: "";
+            background-image: url('https://ejr-508.github.io/Convite-Luara-Sophia/princesa-sofia.png');
+            background-size: 85%;
+            background-repeat: no-repeat;
+            background-position: center 25%;
+            opacity: 0.35; /* Transparência da Princesa Sofia (35%) */
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            z-index: 0;
+            pointer-events: none;
+            border-radius: 27px;
+        }
+
+        /* Mantém os elementos visíveis acima das imagens de fundo */
+        .crown, .badge, h1, .subtitle, .info-block, .rsvp-section {
             position: relative;
             z-index: 1;
-        }
-
-        /* Detalhe que lembra uma coroa/realeza no topo */
-        .invite-container::before {
-            content: "👑";
-            font-size: 2rem;
-            position: absolute;
-            top: -25px;
-            left: 50%;
-            transform: translateX(-50%);
-            background: #f3e8ff;
-            padding: 0 10px;
-            z-index: 2;
         }
 
         .badge {
@@ -129,11 +154,11 @@
             border-radius: 20px;
             padding: 20px;
             margin-bottom: 20px;
-            backdrop-filter: blur(2px); /* Efeito enevoado para melhorar a leitura sobre a imagem */
+            backdrop-filter: blur(2px);
         }
 
         .info-title {
-            color: #fef08a; /* Dourado para os títulos secundários */
+            color: #fef08a;
             font-size: 0.9rem;
             text-transform: uppercase;
             font-weight: 700;
@@ -149,7 +174,7 @@
 
         .btn {
             display: block;
-            background: linear-gradient(to right, #f59e0b, #d97706); /* Botão Dourado Realeza */
+            background: linear-gradient(to right, #f59e0b, #d97706);
             color: #3b0764;
             text-decoration: none;
             padding: 16px;
@@ -189,21 +214,70 @@
             height: 310px;
             background: transparent;
         }
+        
+        /* ESTILO DO CONTADOR REGRESSIVO */
+        .timer-grid {
+            display: flex;
+            justify-content: center;
+            gap: 12px;
+            margin-top: 12px;
+        }
+
+        .timer-grid div {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            background: rgba(255, 255, 255, 0.12);
+            padding: 8px;
+            border-radius: 12px;
+            min-width: 65px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .timer-grid span {
+            font-size: 1.4rem;
+            font-weight: 700;
+            color: #fef08a;
+        }
+
+        .timer-grid small {
+            font-size: 0.7rem;
+            color: #e9d5ff;
+            text-transform: uppercase;
+            font-weight: 600;
+            margin-top: 2px;
+        }
     </style>
 </head>
 <body>
 
     <div class="invite-container">
+        <!-- COROA ADICIONADA AQUI -->
+        <div class="crown">👑</div>
+
         <span class="badge">Convite Real</span>
         
         <h1>Luara Sophia - 1 Ano</h1>
         <p class="subtitle">É com prazer que convocamos os príncipes e princesas dos reinos distantes, para comemorar o primeiro ano de reinado da princesa Luara Sophia</p>
 
+        <!-- BLOCO DA DATA -->
         <div class="info-block">
             <div class="info-title">📅 Quando será o Baile?</div>
             <div class="info-value">Sábado, 29 de Agosto às 17:00h</div>
         </div>
 
+        <!-- BLOCO DO CRONÔMETRO (SEPARADO E NO LUGAR CERTO) -->
+        <div class="info-block">
+            <div class="info-title">⏳ O Baile Real Começa Em:</div>
+            <div id="countdown" class="timer-grid">
+                <div><span id="days">00</span><small>Dias</small></div>
+                <div><span id="hours">00</span><small>Horas</small></div>
+                <div><span id="minutes">00</span><small>Min</small></div>
+                <div><span id="seconds">00</span><small>Seg</small></div>
+            </div>
+        </div>
+
+        <!-- BLOCO DO LOCAL -->
         <div class="info-block">
             <div class="info-title">📍 Castelo do Evento</div>
             <div class="info-value">Sede dos Idosos</div>
@@ -212,12 +286,39 @@
             <a href="https://maps.app.goo.gl/DCaijb767bz7RUhb6" target="_blank" class="btn">Abrir Mapa Real</a>
         </div>
 
+        <!-- SEÇÃO RSVP -->
         <div class="rsvp-section">
             <h3>Confirme sua Presença</h3>
-            
             <iframe src="https://tally.so/embed/XxyD0O?hideTitle=1&transparentBackground=1" title="RSVP"></iframe>
         </div>
     </div>
+
+    <!-- MOTOR DO CRONÔMETRO CORRIGIDO -->
+<script>
+    const dataFesta = new Date(2026, 7, 29, 17, 0, 0).getTime();
+
+    const atualizarContador = setInterval(function() {
+        const agora = new Date().getTime();
+        const diferenca = dataFesta - agora;
+
+        if (diferenca < 0) {
+            clearInterval(atualizarContador);
+            document.getElementById("countdown").innerHTML = "<div style='color: #fef08a; font-weight:700; font-size:1.2rem; width:100%;'>👑 O Baile Real Já Começou! 👑</div>";
+            return;
+        }
+
+        const dias = Math.floor(diferenca / (1000 * 60 * 60 * 24));
+        const horas = Math.floor((diferenca % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        const minutos = Math.floor((diferenca % (1000 * 60 * 60)) / (1000 * 60));
+        const segundos = Math.floor((diferenca % (1000 * 60)) / 1000);
+
+        // CORREÇÃO AQUI: Agora todos usam as variáveis certas em português
+        document.getElementById("days").innerText = dias < 10 ? "0" + dias : dias;
+        document.getElementById("hours").innerText = horas < 10 ? "0" + horas : horas;
+        document.getElementById("minutes").innerText = minutos < 10 ? "0" + minutos : minutos;
+        document.getElementById("seconds").innerText = segundos < 10 ? "0" + segundos : segundos;
+    }, 1000);
+</script>
 
 </body>
 </html>
