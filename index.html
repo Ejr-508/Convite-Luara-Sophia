@@ -26,7 +26,6 @@
         }
 
         body {
-            /* Fundo em degradê lilás pastel bem delicado */
             background: linear-gradient(135deg, #f3e8ff 0%, #e9d5ff 100%);
             color: #3b0764;
             display: flex;
@@ -37,8 +36,8 @@
             font-family: 'Quicksand', sans-serif;
         }
 
+    
         .invite-container {
-            /* Fundo do convite em Roxo Real com bordas douradas */
             background: linear-gradient(135deg, #6b21a8 0%, #4c1d95 100%);
             color: #fdf4ff;
             max-width: 450px;
@@ -47,40 +46,38 @@
             padding: 45px 30px;
             text-align: center;
             box-shadow: 0 20px 40px rgba(107, 33, 168, 0.3);
-            border: 3px solid #f59e0b; /* Borda Dourada */
+            border: 3px solid #f59e0b;
             position: relative;
         }
 
-       /* MEDALHA REAL DA COROA (BLINDADA) */
-.crown {
-    font-size: 1.8rem;
-    position: absolute !important; /* O !important obriga ela a flutuar */
-    top: -30px !important; /* Obriga ela a subir para a borda */
-    left: 50%;
-    transform: translateX(-50%);
+        .crown {
+            font-size: 1.8rem;
+            position: absolute !important;
+            top: -30px !important;
+            left: 50%;
+            transform: translateX(-50%);
+        
+            width: 60px;
+            height: 60px;
+            background: #f3e8ff; 
+            border: 3px solid #f59e0b; 
+            border-radius: 50%; 
+        
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        
+            z-index: 10 !important;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+        }
 
-    width: 60px;
-    height: 60px;
-    background: #f3e8ff; 
-    border: 3px solid #f59e0b; 
-    border-radius: 50%; 
-
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
-    z-index: 10 !important;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
-}
-
-        /* CAMADA 1: IMAGEM DE FUNDO TOTAL (Fica por baixo) */
         .invite-container::before {
             content: "";
             background-image: url('https://ejr-508.github.io/Convite-Luara-Sophia/fundo.jpg');
             background-size: cover;
             background-repeat: no-repeat;
             background-position: center;
-            opacity: 0.15; /* Transparência do fundo total (15%) */
+            opacity: 0.15;
             position: absolute;
             top: 0;
             left: 0;
@@ -91,14 +88,13 @@
             border-radius: 27px;
         }
 
-        /* CAMADA 2: PRINCESINHA SOFIA CENTRADA (Fica por cima do fundo) */
         .invite-container::after {
             content: "";
             background-image: url('https://ejr-508.github.io/Convite-Luara-Sophia/princesa-sofia.png');
             background-size: 85%;
             background-repeat: no-repeat;
             background-position: center 20%;
-            opacity: 0.45; /* Transparência da Princesa Sofia (35%) */
+            opacity: 0.45;
             position: absolute;
             top: 0;
             left: 0;
@@ -109,14 +105,13 @@
             border-radius: 27px;
         }
 
-        /* Mantém os elementos visíveis acima das imagens de fundo */
         .crown, .badge, h1, .subtitle, .info-block, .rsvp-section {
             position: relative;
             z-index: 1;
         }
 
         .badge {
-            background: #fef08a; /* Amarelo ouro claro */
+            background: #fef08a;
             color: #713f12;
             padding: 6px 18px;
             border-radius: 20px;
@@ -134,7 +129,6 @@
             font-size: 2.2rem;
             line-height: 1.2;
             margin-bottom: 15px;
-            /* Degradê dourado brilhante no texto */
             background: linear-gradient(to right, #ffe4e6, #fef08a, #f59e0b);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
@@ -186,14 +180,33 @@
             text-transform: uppercase;
             font-size: 0.9rem;
             letter-spacing: 0.5px;
-            
-            /* ESSA É A LINHA QUE ATIVA A MÁGICA: Pulsa a cada 2 segundos para sempre */
             animation: pulseGlow 2s infinite;
         }
 
         .btn:hover {
             transform: translateY(-2px);
             box-shadow: 0 6px 15px rgba(0,0,0,0.3);
+        }
+
+        .btn-secondary {
+            display: inline-block;
+            background: rgba(255, 255, 255, 0.1);
+            color: #fef08a;
+            text-decoration: none;
+            padding: 10px 18px;
+            border-radius: 12px;
+            font-weight: 600;
+            margin-top: 15px;
+            border: 1px solid rgba(254, 240, 138, 0.4);
+            transition: all 0.2s ease;
+            font-size: 0.85rem;
+            letter-spacing: 0.5px;
+        }
+
+        .btn-secondary:hover {
+            background: rgba(255, 255, 255, 0.2);
+            border-color: #fef08a;
+            transform: translateY(-2px);
         }
 
         .rsvp-section {
@@ -218,7 +231,6 @@
             background: transparent;
         }
 
-        /* ESTILO DO CONTADOR REGRESSIVO */
         .timer-grid {
             display: flex;
             justify-content: center;
@@ -251,16 +263,12 @@
             margin-top: 2px;
         }
     
-        /* ========================================= */
-        /* EFEITO ESPECIAL: BOTÃO PULSANTE           */
-        /* ========================================= */
         @keyframes pulseGlow {
             0% {
                 box-shadow: 0 4px 10px rgba(0,0,0,0.2), 0 0 0 0 rgba(245, 158, 11, 0.7);
                 transform: scale(1);
             }
             50% {
-                /* Aumenta o botão 3% e solta uma onda de luz dourada que vai sumindo */
                 box-shadow: 0 4px 10px rgba(0,0,0,0.2), 0 0 20px 8px rgba(245, 158, 11, 0);
                 transform: scale(1.03);
             }
@@ -270,26 +278,23 @@
             }
         }
 
-        /* ========================================= */
-        /* EFEITO ESPECIAL: POEIRA MÁGICA FLUTUANTE  */
-        /* ========================================= */
         #magic-dust {
             position: fixed;
             top: 0;
             left: 0;
             width: 100vw;
             height: 100vh;
-            pointer-events: none; /* Garante que os convidados ainda consigam clicar nos botões */
-            z-index: 9999; /* Faz a mágica flutuar por cima de todo o convite */
+            pointer-events: none;
+            z-index: 9999;
             overflow: hidden;
         }
 
         .sparkle {
             position: absolute;
             bottom: -20px;
-            background: #ffffff; /* Miolo da luzinha branco */
+            background: #ffffff;
             border-radius: 50%;
-            box-shadow: 0 0 8px 3px #f59e0b; /* Aura do brilho em dourado real */
+            box-shadow: 0 0 8px 3px #f59e0b;
             opacity: 0;
             animation: floatUp linear infinite;
         }
@@ -300,12 +305,69 @@
             80% { opacity: 0.5; transform: translateY(-80vh) scale(0.8); }
             100% { transform: translateY(-120vh) scale(0); opacity: 0; }
         }
+    
+        html {
+            scrollbar-width: thin;
+            scrollbar-color: #f59e0b transparent;
+        }
+
+        html::-webkit-scrollbar,
+        body::-webkit-scrollbar {
+            width: 10px;
+        }
+
+        html::-webkit-scrollbar-track,
+        body::-webkit-scrollbar-track {
+            background: rgba(0, 0, 0, 0.1); 
+        }
+
+        html::-webkit-scrollbar-thumb,
+        body::-webkit-scrollbar-thumb {
+            background: linear-gradient(to bottom, #fef08a, #f59e0b); 
+            border-radius: 10px;
+            border: 2px solid #3b0764;
+        }
+    
+        .scroll-indicator {
+            position: fixed;
+            bottom: 25px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            color: #fef08a;
+            font-weight: 700;
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            z-index: 9998;
+            animation: bounceArrow 2s infinite;
+            text-shadow: 0 2px 5px rgba(0,0,0,0.5);
+            pointer-events: none;
+            transition: opacity 0.5s ease;
+        }
+
+        .scroll-indicator .arrow-down {
+            font-size: 1.2rem;
+            margin-top: 3px;
+        }
+
+        @keyframes bounceArrow {
+            0%, 20%, 50%, 80%, 100% { transform: translate(-50%, 0); }
+            40% { transform: translate(-50%, -10px); }
+            60% { transform: translate(-50%, -5px); }
+        }
     </style>
 </head>
 <body>
 
+    <div id="scroll-indicator" class="scroll-indicator">
+        <span>Deslize</span>
+        <div class="arrow-down">⬇️</div>
+    </div>
+
     <div class="invite-container">
-        <!-- COROA ADICIONADA AQUI -->
         <div class="crown">👑</div>
 
         <span class="badge">Convite Real</span>
@@ -313,13 +375,11 @@
         <h1>Luara Sophia - 1 Ano</h1>
         <p class="subtitle">É com prazer que convocamos os príncipes e princesas dos reinos distantes, para comemorar o primeiro ano de reinado da princesa Luara Sophia</p>
 
-        <!-- BLOCO DA DATA -->
         <div class="info-block">
             <div class="info-title">📅 Quando será o Baile?</div>
             <div class="info-value">Sábado, 29 de Agosto às 17:00h</div>
         </div>
 
-        <!-- BLOCO DO CRONÔMETRO (SEPARADO E NO LUGAR CERTO) -->
         <div class="info-block">
             <div class="info-title">⏳ O Baile Real Começa Em:</div>
             <div id="countdown" class="timer-grid">
@@ -330,7 +390,6 @@
             </div>
         </div>
 
-        <!-- BLOCO DO LOCAL -->
         <div class="info-block">
             <div class="info-title">📍 Castelo do Evento</div>
             <div class="info-value">Sede dos Idosos</div>
@@ -339,14 +398,12 @@
             <a href="https://maps.app.goo.gl/DCaijb767bz7RUhb6" target="_blank" class="btn">Abrir Mapa Real</a>
         </div>
 
-        <!-- SEÇÃO RSVP -->
         <div class="rsvp-section">
             <h3>Confirme sua Presença</h3>
             <iframe src="https://tally.so/embed/XxyD0O?hideTitle=1&transparentBackground=1" title="RSVP"></iframe>
         </div>
     </div>
 
-    <!-- MOTOR DO CRONÔMETRO CORRIGIDO -->
 <script>
     const dataFesta = new Date(2026, 7, 29, 17, 0, 0).getTime();
 
@@ -365,7 +422,6 @@
         const minutos = Math.floor((diferenca % (1000 * 60 * 60)) / (1000 * 60));
         const segundos = Math.floor((diferenca % (1000 * 60)) / 1000);
 
-        // CORREÇÃO AQUI: Agora todos usam as variáveis certas em português
         document.getElementById("days").innerText = dias < 10 ? "0" + dias : dias;
         document.getElementById("hours").innerText = horas < 10 ? "0" + horas : horas;
         document.getElementById("minutes").innerText = minutos < 10 ? "0" + minutos : minutos;
@@ -373,35 +429,41 @@
     }, 1000);
 </script>
 
-    <!-- ========================================= -->
-    <!-- SCRIPT DA POEIRA MÁGICA (ANTES DO </body>) -->
-    <!-- ========================================= -->
     <script>
-        // Cria a camada onde a poeira mágica vai flutuar
         const dustContainer = document.createElement('div');
         dustContainer.id = 'magic-dust';
         document.body.appendChild(dustContainer);
     
-        // Cria 40 pontinhos de luz espalhados
         for (let i = 0; i < 40; i++) {
             let sparkle = document.createElement('div');
             sparkle.classList.add('sparkle');
         
-        // Tamanhos variados para dar ideia de profundidade (umas mais perto, outras mais longe)
         let size = Math.random() * 3 + 1;
         sparkle.style.width = size + 'px';
         sparkle.style.height = size + 'px';
         
-        // Espalhadas aleatoriamente por toda a largura da tela
         sparkle.style.left = Math.random() * 100 + 'vw';
         
-        // Velocidades e atrasos diferentes para não subirem todas juntas
-        sparkle.style.animationDuration = (Math.random() * 6 + 4) + 's'; // Demoram de 4 a 10 segundos para subir
+        sparkle.style.animationDuration = (Math.random() * 6 + 4) + 's';
         sparkle.style.animationDelay = (Math.random() * 5) + 's';
         
         dustContainer.appendChild(sparkle);
     }
+            
+
 </script>
         
+<script>
+    window.addEventListener('scroll', function() {
+        const indicator = document.getElementById('scroll-indicator');
+        
+        if (window.scrollY > 50) {
+            indicator.style.opacity = '0';
+        } else {
+            indicator.style.opacity = '1';
+        }
+    });
+</script>
+
 </body>
 </html>
